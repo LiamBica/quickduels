@@ -5,11 +5,13 @@ import Bot from "@/util/bot";
 import ApiStrings from "@/strings/api";
 import BotStrings from "@/strings/bot";
 import WebsiteStrings from "@/strings/website";
+import { Player } from "types/player";
 
 export class Master {
   api: API;
   bot: Bot;
   usedAccounts: string[];
+  matchmakingPool: Player[];
   queue: Map<
     string,
     {
@@ -23,11 +25,14 @@ export class Master {
     api: typeof ApiStrings;
     web: typeof WebsiteStrings;
   };
+
 }
 
 /*
  Structurs for the Discord bot
 */
+
+
 
 export abstract class Command {
   name?: string;
